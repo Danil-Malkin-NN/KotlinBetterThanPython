@@ -34,7 +34,7 @@ private fun FindBestStudent(list: MutableList<Student>): Map<String, List<Studen
     println()
 
 
-    var map = list.groupBy(Student::group_name)
+    val map = list.groupBy(Student::group_name)
 
     for (group in map) {
         group.value.stream().max(compareBy { it -> it.marksList.average() })
